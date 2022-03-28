@@ -1,0 +1,44 @@
+/* .App-header {
+    background-color: #2f7c7c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+  
+  } */
+  .nav{
+      width: 100%;
+}
+img{
+    width: 90px;
+    height: 80px;
+}
+.brand{
+    font-size: 40px;
+    text-align:left;
+    font-weight: bolder;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ .roberto{
+     width: 100%;
+     display: flex;
+     flex-wrap: nowrap;
+     align-items: center;
+     list-style-type: none;
+     justify-content: space-around;
+     padding: 0px;
+     background-color: #52cccc;
+     height: 70px;
+ }
+ .carlos{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    list-style-type: none;
+    justify-content: space-around;
+    font-weight: bold;
+    
+ }
+    
