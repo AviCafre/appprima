@@ -1,0 +1,14 @@
+#btncar{ 
+    background-color: rgb(23, 163, 145);
+    width: 55px;
+    height: 55px;
+    padding: 3px;
+    justify-content: center;
+}
+
+
+.carrito{
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+}

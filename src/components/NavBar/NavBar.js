@@ -1,13 +1,13 @@
 import './NavBar.css';
+import Cartlogo from "../CartWidget/cartwidget";
 
 
-const NavBar = () =>{
-    
-
+function NavBar  () {
     return (
         <div>
             <nav className='nav'>
-                <ul className='roberto'>
+                
+                <ul className='roberto'><Cartlogo />
                     <li className='LOGO'><img src="/images/EB.png" alt="logo"></img></li>
                     <li className='brand'>En Bruto</li>
                     <li className='carlos'>inicio</li>
