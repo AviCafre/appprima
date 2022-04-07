@@ -1,0 +1,12 @@
+.targ{
+background-color: aquamarine;
+width: 500px;
+text-align: justify;
+font-size: 20px;
+}
+.pic{
+    margin-left: 25px;
+    flex: content;
+    columns: 300px;
+    grid-column: auto;
+}

@@ -4,7 +4,8 @@ import NavBar from './components/NavBar/NavBar.js';
 import './components/CartWidget/cartwidget';
 import ItemListContainer from './components/CartWidget/itemListContainer';
 import Counter from './components/ItemCount/itemCount';
-
+import './components/Item/item.css'
+import Item from './components/Item/item';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <NavBar/>
         <ItemListContainer greeting={'Bienvenido a: EN BRUTO'}/>
         <Counter  initial={0} stock={15} onAdd={handleOnAdd} />
+        
           
       </header>
     </div>
