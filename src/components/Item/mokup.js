@@ -1,4 +1,4 @@
-import './item.css'
+
 
 const products = [
     {
@@ -17,6 +17,14 @@ const products = [
         img: '../../../public/images/ccastle.jpg'
     }
 ]
+
+export const getProductsById = (id) => {
+    return new Promise (resolve => {
+        setTimeout (()=> {
+            resolve(products.find(prod => prod.id === id))
+        }, 2000)
+    })
+}
 
 export const getProducts = () => {
     return new Promise (resolve => {
