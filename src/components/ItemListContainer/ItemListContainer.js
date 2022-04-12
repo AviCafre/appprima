@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import {getProducts} from '../Item/mokup'
-import ItemList from '../Item/itemList'
+import {getProducts} from '../../mokup'
+import ItemList from '../ItemList/itemList'
 
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
         getProducts().then(prods => {
-            setProducts (prods)
-                    }).catch(error =>{
-                        console.log(error)
+            setProducts(prods)
+        }).catch(error => {
+          console.log(error)
     })
 }, [])
 
@@ -17,7 +17,7 @@ const ItemListContainer = (props) => {
     return (
         <div>
             <h1>{props.greeting}</h1>
-            <ItemList products={products} />
+            <ItemList products={products}/>
            </div> )
 }
 

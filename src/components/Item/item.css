@@ -1,12 +1,14 @@
 .targ{
 background-color: aquamarine;
-width: 500px;
+width: 100px;
 text-align: justify;
 font-size: 20px;
+justify-content: space-around;
 }
 .pic{
     margin-left: 25px;
     flex: content;
-    columns: 300px;
+    columns: 100px;
     grid-column: auto;
+    justify-content: space-around;
 }

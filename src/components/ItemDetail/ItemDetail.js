@@ -4,18 +4,18 @@ import Counter from '../ItemCount/itemCount'
 
 const Card = ({id,name, description, price, img}) => {
     return(
-    <div>
+    <>
         <h4 className="cardname"></h4>
-        <img src={img} className="cardimg" alt={name} />
+        <img className="cardimg" src={"/images/ccorazon.jpg"}  alt={name}/>
         <div>
             <p>{description}</p>
             <p className="precio">{price}</p>
             <h6>{id}</h6>
         </div>
-        <div>
+        
             <Counter/>
-        </div>
-    </div>
+        
+    </>
 )}
 
 export default Card;
