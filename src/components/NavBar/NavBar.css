@@ -42,3 +42,25 @@ img{
     
  }
     
+.ActiveOption{
+    text-decoration: none;
+    border-radius: 20;
+    margin: 0 50px;
+    width: auto;
+    padding: 12px;
+    background: #3b52d4;
+    font-size: 16px;
+    border-radius: 3px;
+    flex:none;
+    display: flex;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: ;
+    color:blue;
+    border:none;
+    cursor: pointer;
+    outline: inherit;
+}

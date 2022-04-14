@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
+import { useParams}  from 'react-router-dom'
 
-
-const Meliapi = (props) => {
+const ItemDetailContainer = (props) => {
     const [products, setProducts] = useState([])
     const [input, setInput] = useState('')
 
-   /*  useEffect(() => {
-        getProductsById().then(prods => {
+    const {productId}= useParams()
+
+     useEffect(() => {
+        getProductsById(productId).then(prods => {
             setProducts (prods.id)
                     }).catch(error =>{
                         console.log(error)
     })
-}, []) */
+}, []) 
 
-const handleSearch = () => {
+/* const handleSearch = () => {
     fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${input}`)
         .then(response => {
             return response.json()
@@ -44,7 +46,7 @@ const handleSearch = () => {
             </div>
             </div>
             
-     )
+     ) */
 }
 
-export default Meliapi;
+export default ItemDetailContainer;

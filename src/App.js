@@ -7,6 +7,8 @@ import Counter from './components/ItemCount/itemCount';
 import './components/Item/item.css'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Card from '../src/components/ItemDetail/ItemDetail'
+import { BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+
 
 
 function App() {
@@ -17,11 +19,25 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <NavBar/>
+        
         <ItemListContainer greeting={'Bienvenido a: EN BRUTO'}/>
         <Counter  initial={0} stock={15} onAdd={handleOnAdd} />
         <ItemDetailContainer/>
         <Card/>
+        <BrowserRouter>
+            <NavBar/>
+            <div>
+              <Link to='/'>List</Link>
+              
+            </div>
+            <Routes>
+              <Route path='/' element={<ItemListContainer/>}/>
+              <Route path='/category/:id' element={<ItemListContainer/>}/>
+              <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+              
+
+            </Routes>
+        </BrowserRouter>
       </header>
     </div>
   );

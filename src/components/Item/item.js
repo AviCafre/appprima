@@ -1,14 +1,27 @@
+import products from "../../mokup";
+import {Link} from 'react-router-dom'
 
-
-const Item  = ({ name, img}) => {
+const Item  = ({id, name, img, price}) => {
     return(
-        <section className="pic">
-            <picture >
-                <img  className="targ" src={"/images/ccastle.jpg" } alt={name}/>
+         <article className="carditem">
+             <header className="cardheader">
+                 <h4 className="itemname">{name}</h4>
+                 </header>
+         
+            <picture className="pic">
+                <img  className="targ" src={img } alt={name}/>
             </picture>
-            <h2>{name}</h2>
-            <button>Ver detalle</button>
+        <section >
+            <h2 className="articulo">{name}</h2>
+            <h3 className="precio">Precio:${price}</h3>
+            
         </section>
+
+        <footer className="footer">
+            <Link to={`/item/${id}`}>Ver Detalle</Link>
+            <button className="vdet">Ver detalle</button>
+        </footer>
+    </article>
     )
 }
 

@@ -4,6 +4,7 @@ width: 100px;
 text-align: justify;
 font-size: 20px;
 justify-content: space-around;
+
 }
 .pic{
     margin-left: 25px;
@@ -12,3 +13,9 @@ justify-content: space-around;
     grid-column: auto;
     justify-content: space-around;
 }
+.carditem{}
+.cardheader{}
+.itemname{}
+.articulo{}
+.footer{}
+.vdet{}
