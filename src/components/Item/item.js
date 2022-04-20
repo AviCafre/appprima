@@ -1,7 +1,7 @@
 import products from "../../mokup";
 import {Link} from 'react-router-dom'
 
-const Item  = ({id, name, img, price}) => {
+const Item  = ({id, name, img, price, description}) => {
     return(
          <article className="carditem">
              <header className="cardheader">
@@ -10,6 +10,7 @@ const Item  = ({id, name, img, price}) => {
          
             <picture className="pic">
                 <img  className="targ" src={img } alt={name}/>
+                Description:<p>{description}</p>
             </picture>
         <section >
             <h2 className="articulo">{name}</h2>

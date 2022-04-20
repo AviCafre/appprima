@@ -1,24 +1,24 @@
 import Counter from '../ItemCount/itemCount'
 import {Link} from 'react-router-dom'
-
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
+import itemCount from '../ItemCount/itemCount'
+import {useState, useContext} from 'react'
 /* Aca va el import del CSS para la card */
 
-const Card = ({id,name, description, price, img}) => {/* 
-    return(
-    <>
-        <h4 className="cardname"></h4>
-        <img className="cardimg" src={"/images/ccorazon.jpg"}  alt={name}/>
-        <div>
-            <p>{description}</p>
-            <p className="precio">{price}</p>
-            <h6>{id}</h6>
-        </div>
-        
-            <Counter/>
-        
-    </>
-)*/
+const ItemDetail = ({id,name, description, price, img}) => {
+    const [quantity, setQuantity]= useState (0)
+    
+    const handleOnAdd= (count) => {
+        setQuantity(count)
+    }
+    /* const handleSelect= (value) => {
+        navigate(value)
+    } */
+
 return(
+
+   <ItemDetailContainer>
+      
     <article className="carditem">
         <header className="cardheader">
             <h4 className="itemname">{name}</h4>
@@ -26,18 +26,24 @@ return(
     
        <picture className="pic">
            <img  className="targ" src={img } alt={name}/>
+           <p>{description}</p>
        </picture>
    <section >
        <h2 className="articulo">{name}</h2>
        <h3 className="precio">Precio:${price}</h3>
        
    </section>
+         <div>
+             {/* <Select options={options} onSelect={handleSelect}/> */}
+            {quantity > 0 ? <Link to='/cart'>Ir al carrito</Link> : <Counter onConfirm={handleOnAdd} stock={stock} />}
 
+         </div>
    <footer className="footer">
        <Link to={`productos/${id}`}>Ver Detalle</Link>
        <button className="vdet">Ver detalle</button>
    </footer>
 </article>
-)
+</ItemDetailContainer> 
+    )
 } 
-export default Card;
+export default ItemDetail;

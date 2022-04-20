@@ -1,52 +1,33 @@
 import { useEffect, useState } from "react";
 import { useParams}  from 'react-router-dom'
+import ItemDetail from "../ItemDetail/ItemDetail"; 
+import { getProductsById } from "../../mokup";
 
-const ItemDetailContainer = (props) => {
+
+const ItemDetailContainer = () => {
     const [products, setProducts] = useState([])
     const [input, setInput] = useState('')
 
     const {productId}= useParams()
 
-     useEffect(() => {
+    useEffect(() => {
         getProductsById(productId).then(prods => {
             setProducts (prods.id)
                     }).catch(error =>{
                         console.log(error)
     })
-}, []) 
+    return(() => {
+    setProducts()
+})
+}, [productId]) 
 
-/* const handleSearch = () => {
-    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${input}`)
-        .then(response => {
-            return response.json()
-        })
-        .then(res => {
-            setProducts(res.results)
-        })
-}
-    return (
-        <div> 
-            <h1>Tu producto</h1>
-            <div>
-                <input type='text' onChange={(e) => setInput(e.target.value)}/>
-                <button onClick={handleSearch}>Buscar</button>
 
-                <ul>
-                    {products.map(products => {
-                        return(
-                           <li key={products.id}>
-                        <img src={products.thumbnail} alt={products.title}/>
-                        <p>{products.description}</p>
-                        <p>${products.price}</p>
-                            </li>
-                    
-                        )
-                    })} 
-                    </ul> 
-            </div>
-            </div>
-            
-     ) */
+
+return(
+    <div >
+        {<ItemDetail {...products}/>}
+    </div>
+)
 }
 
 export default ItemDetailContainer;
