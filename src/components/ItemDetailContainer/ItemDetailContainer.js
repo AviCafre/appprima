@@ -4,9 +4,10 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import { getProductsById } from "../../mokup";
 
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (setCart, cart) => {
     const [products, setProducts] = useState([])
     const [input, setInput] = useState('')
+    
 
     const {productId}= useParams()
 
@@ -25,7 +26,7 @@ const ItemDetailContainer = () => {
 
 return(
     <div >
-        {<ItemDetail {...products}/>}
+        {<ItemDetail {...products} setCart={setCart} cart={cart} />}
     </div>
 )
 }

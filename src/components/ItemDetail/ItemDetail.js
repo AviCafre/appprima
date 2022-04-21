@@ -3,17 +3,25 @@ import {Link} from 'react-router-dom'
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 import itemCount from '../ItemCount/itemCount'
 import {useState, useContext} from 'react'
+import { Context } from '../../App'
 /* Aca va el import del CSS para la card */
 
-const ItemDetail = ({id,name, description, price, img}) => {
+const ItemDetail = ({id,name, description, price, img, setCart, cart}) => {
     const [quantity, setQuantity]= useState (0)
     
     const handleOnAdd= (count) => {
+        const objP {
+            id, name, price, quantity
+        }
+        setCart([... cart, objP])
         setQuantity(count)
     }
-    /* const handleSelect= (value) => {
+
+    const value= useContext(Context)
+    
+    const handleSelect= (value) => {
         navigate(value)
-    } */
+    }
 
 return(
 
