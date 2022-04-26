@@ -9,10 +9,11 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Card from '../src/components/ItemDetail/ItemDetail'
 import { BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import { useState, createContext} from 'react';
+import {CartContextProvider} from '../Context/CartContext'
 
 export const Context= createContext()
 const App=() => {
-  const [cart, setCart] = useState([])
+  /* const [cart, setCart] = useState([]) */
 
 
   /* const handleOnAdd= (quantity) => {
@@ -26,7 +27,8 @@ const App=() => {
         <Counter  initial={0} stock={15} /* onAdd={handleOnAdd} */ />
         <ItemDetailContainer/>
         <Card/>
-        <Context.Provider value={{cart, setCart}}>
+        {/* <Context.Provider value={{cart, setCart}}> */}
+        <CartContextProvider>
         <BrowserRouter>
             <NavBar/>
             <div>
@@ -41,7 +43,8 @@ const App=() => {
 
             </Routes>
         </BrowserRouter>
-        </Context.Provider>
+        </CartContextProvider>
+        {/* </Context.Provider> */}
       </header>
     </div>
   );
