@@ -9,7 +9,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Card from '../src/components/ItemDetail/ItemDetail'
 import { BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import { useState, createContext} from 'react';
-import {CartContextProvider} from '../Context/CartContext'
+import {CartContextProvider} from '../src/Context/Cart/CartContext'
 
 export const Context= createContext()
 const App=() => {
