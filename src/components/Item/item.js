@@ -1,11 +1,11 @@
-import products from "../../mokup";
+/* import products from "../../mokup"; */
 import {Link} from 'react-router-dom'
 import { useContext } from "react";
 import { Context } from "../../App";
 
 const Item  = ({id, name, img, price, description}) => {
     
-    const value = useContext(Context)
+    /* const value = useContext(Context) */
     
     return(
          <article className="carditem">

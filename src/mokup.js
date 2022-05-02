@@ -24,11 +24,11 @@ const products = [
     }
 ]
 
-export const getProductsById = (id) => {
+export const getProductsById = (categoryId) => {
     return new Promise (resolve => {
         setTimeout (()=> {
-            resolve(products.find(prod => prod.id == parseInt(id)))
-        }, 2000)
+            resolve(categoryId ? products.filter(prod => prod.category === categoryId) : products)
+        }, 500)
     })
 }
 

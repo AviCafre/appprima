@@ -1,7 +1,9 @@
 import  {createContext, useState} from 'react';
 
 
-const CartContext = ()
+const CartContext = createContext()
+export const CartContextProvider = ({ children }) => {
+    const [ cart, setCart] = useState ([]);
 
 
 const addItem= (productToAdd) => {
@@ -29,8 +31,7 @@ const removeItem = (id)  => {
     setCart(products)
 }
 
-export const CartContextProvider = ({children}) => {
-    const [cart, setCart] = useState([])
+
 
     return(
         <CartContext.Provider value = {{

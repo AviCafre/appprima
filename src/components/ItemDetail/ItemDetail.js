@@ -1,31 +1,33 @@
 import Counter from '../ItemCount/itemCount'
 import {Link} from 'react-router-dom'
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
-import itemCount from '../ItemCount/itemCount'
+/* import itemCount from '../ItemCount/itemCount' */
 import {useState, useContext} from 'react'
 import CartContext from '../../Context/Cart/CartContext'
 /* Aca va el import del CSS para la card */
 
 const ItemDetail = ({id,name, description, price, img, setCart, cart}) => {
     
-    /* const [quantity, setQuantity]= useState (0) */
+    const [quantity, setQuantity]= useState (0)
 
     const {addItem, isInCart}= useContext(CartContext)
 
     const handleOnAdd= (count) => {
-        const objP {
+        setQuantity(count)
+        
+        const objP={
             id, name, price, quantity
-        }
+        };
 
-        addItem({...objP, quantity : count})
-        /* setQuantity(count) */
+        addItem({...objP, quantity : count});
+        
     }
 
-    const value= useContext(Context)
+   /*  const value= useContext(Context)
 
     const handleSelect= (value) => {
         navigate(value)
-    }
+    } */
 
 return(
 
@@ -47,7 +49,7 @@ return(
    </section>
          <div>
              {/* <Select options={options} onSelect={handleSelect}/> */}
-            {isInCart(id) ? <Link to='/cart'>Ir al carrito</Link> : <Counter onConfirm={handleOnAdd} stock={stock} />}
+            {isInCart(id) ? <Link to='/cart'>Ir al carrito</Link> : <Counter onConfirm={handleOnAdd} stock={10} />}
 
          </div>
    <footer className="footer">

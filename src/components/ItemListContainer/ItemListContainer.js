@@ -1,13 +1,16 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 /* import {getProducts} from '../../mokup' */
-import { getDocs } from "firebase/firestore";
 import ItemList from '../ItemList/itemList'
 import { firestoreDB } from "../../services/firebase";
+import {useParams} from 'react-router-dom';
+
+
 
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([])
 
+    const  { categoryId} = useParams();
     useEffect(() => {
         /* getProducts().then(prods => {
             setProducts(prods)
@@ -15,8 +18,19 @@ const ItemListContainer = (props) => {
           console.log(error)
     }) */
 
-    getDocs(collection(firestoreDB), 'products')
-}, [])
+    const collectionRef = categoryId 
+        ? query(collection(firestoreDB, 'products'),where('category', '==', 'categoryId'))
+        :collection(firestoreDB, 'products')
+
+
+    getDocs(collectionRef).then((response) => {
+        console.log(response);
+        const products = response.docs.map((doc) =>{
+            return {id: doc.id, ...doc.data() };
+        });
+        setProducts(products);
+    })
+}, [categoryId]);
 
     
     return (
